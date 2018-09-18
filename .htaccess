@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /active/libs/web
+RewriteCond %{HTTP_HOST} ^http://localhost/active$ [NC,OR]
+#RewriteCond %{HTTP_HOST} ^www.seu-dominio.com$
+RewriteCond %{REQUEST_URI} !/active/libs/web/
+RewriteRule (.*) /active/libs/web/$1 [L]
